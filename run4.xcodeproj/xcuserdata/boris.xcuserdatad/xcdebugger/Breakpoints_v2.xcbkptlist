@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "39D2F8ED-E120-4CC4-A155-1F6206AB242D"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D5DD72B1-E8B2-462E-9F33-843E3647D7BB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "run4 Watch App/ContentView.swift"
+            startingColumnNumber = "10"
+            endingColumnNumber = "10"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "endOfInterval()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
