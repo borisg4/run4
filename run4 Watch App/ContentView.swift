@@ -8,6 +8,22 @@
 import SwiftUI
 import Combine
 
+protocol TrainingMode {
+    var Colour: Color { get set }
+    var Duration: Int { get set }
+    var Icon: String { get set }
+}
+
+class RunningMode: TrainingMode {
+    var Colour: Color = .green
+    var Duration: Int = 5
+    var Icon: String = "figure.run"
+}
+class WalkingMode: TrainingMode {
+    var Colour: Color = .orange
+    var Duration: Int = 1
+    var Icon: String = "figure.walk"
+}
 struct ContentView: View {
     @State private var count = 3
     @State private var countSetByUser = 0
@@ -15,13 +31,24 @@ struct ContentView: View {
     @State private var colour = Color.gray // green = running interval
     @State private var total = 0
     @State private var timestampStart = NSDate().timeIntervalSince1970
+    @State private var walkingMode: TrainingMode = WalkingMode()
+    @State private var runningMode: TrainingMode = RunningMode()
+    
     var body: some View {
         VStack(alignment: .center, spacing: 8){
-               Text("\(count)")
-                   .font(.system(size:90))
-                   .fontWeight(.bold)
-                   .foregroundColor(self.colour)
-
+            HStack(alignment: .center, spacing: 8){
+                Button {
+                    count = count + 1 //add 1 to the count variable each time the button is pressed
+                    colour = runningMode.Colour //Color.gray
+                } label: {
+                    Image(systemName: "figure.run") //rendering an icon from SF Symbols
+                        .font(.system(size:34))
+                }
+                Text("\(count)")
+                    .font(.system(size:90))
+                    .fontWeight(.bold)
+                    .foregroundColor(self.colour)
+            }
                HStack(alignment: .center, spacing: 8){
 
                    //Increment button
